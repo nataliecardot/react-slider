@@ -156,7 +156,7 @@ Slider
   margin: 0 auto;
   margin-top: 4rem;
   width: 80vw;
-  /* have to have a height on container due to position absolute - without this, container collapses since its children are taken out of the document flow and thus effectively have nothing in them */
+  /* have to have a height on container due to position absolute - without this, container collapses since its children are taken out of the document flow and thus effectively have nothing inside */
   height: 450px;
   max-width: 800px;
   text-align: center;
