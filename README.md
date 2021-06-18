@@ -1,6 +1,6 @@
 # react-slider
 
-Very simple app featuring data with previous and next buttons that navigate between list items. Autoslide option (goes to next item in list after a certain amount of time).
+Very simple app featuring data with previous and next buttons that navigate between list items. Autoslide option (goes to next item in list after a certain amount of time). Slide-in/slide-out animation upon clicking prev/next buttons achieved using transitions and transformations.
 
 To view, run `npm i && npm start` in downloaded project.
 
