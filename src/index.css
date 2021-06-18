@@ -1,5 +1,5 @@
 /*
-=============== 
+===============
 Variables
 ===============
 */
@@ -43,7 +43,7 @@ Variables
   --fixed-width: 620px;
 }
 /*
-=============== 
+===============
 Global Styles
 ===============
 */
@@ -132,7 +132,7 @@ p {
   }
 }
 /*
-=============== 
+===============
 Slider
 ===============
 */
@@ -156,7 +156,7 @@ Slider
   margin: 0 auto;
   margin-top: 4rem;
   width: 80vw;
-  /* have to have a height */
+  /* have to have a height on container due to position absolute - without this, container collapses since its children are taken out of the document flow and thus effectively have nothing in them */
   height: 450px;
   max-width: 800px;
   text-align: center;
@@ -239,16 +239,17 @@ article {
   left: 0;
   width: 100%;
   height: 100%;
-  /* opacity: 0; */
+  opacity: 0;
   transition: var(--transition);
 }
-/* article.activeSlide {
+article.activeSlide {
   opacity: 1;
   transform: translateX(0);
 }
 article.lastSlide {
   transform: translateX(-100%);
 }
+/* Applies to all slides besides active and last slide */
 article.nextSlide {
   transform: translateX(100%);
-} */
+}
