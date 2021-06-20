@@ -251,5 +251,6 @@ article.lastSlide {
 }
 /* Applies to all slides besides active and last slide */
 article.nextSlide {
+  /* Move 100% of its width to the right (for transform, percentage is relative to element itself, not parent, unlike when you use a percentage as a width value) */
   transform: translateX(100%);
 }
