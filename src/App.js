@@ -20,8 +20,21 @@ function App() {
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
 
+          let position = 'nextSlide';
+          if (personIndex === index) {
+            position = 'activeSlide';
+          }
+          // if index - 1 or last item in list, set to lastSlide
+          if (
+            personIndex === index - 1 ||
+            // When app initially renders/whenever viewing first item in list, place last item to left of first item in list
+            (index === 0 && personIndex === people.length - 1)
+          ) {
+            position = 'lastSlide';
+          }
+
           return (
-            <article key={id}>
+            <article className={position} key={id}>
               <img src={image} alt={name} className="person-img" />
               <h4>{name}</h4>
               <p className="title">{title}</p>
