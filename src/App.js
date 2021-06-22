@@ -21,6 +21,16 @@ function App() {
     }
   }, [index, people]);
 
+  // autoslide (note that it runs on initial render and whenever index is updated)
+  useEffect(() => {
+    // return value: number representing the ID value of the timer that is set, to be used to cancel the timer
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 4000);
+    // cleanup function that useEffect runs when it's time to clean up
+    return () => clearInterval(slider);
+  }, [index]);
+
   return (
     <section className="section">
       {/* title can go in separate component */}
