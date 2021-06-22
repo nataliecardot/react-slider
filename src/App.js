@@ -7,6 +7,20 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);
 
+  // will be called again if index or people changes
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    // needed for lastSlide to apply when prev button is clicked from first slide (since personIndex in the map arg will never be negative)
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+
+    // occurs when next button is clicked from last item in list
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, people]);
+
   return (
     <section className="section">
       {/* title can go in separate component */}
